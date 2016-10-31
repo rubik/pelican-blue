@@ -15,7 +15,10 @@ h1 {
 h2 {
   font-weight: normal;
   margin-top: 10px;
-  margin-bottom: 10px; }
+  margin-bottom: 0; }
+
+h3, h4 {
+  margin-bottom: 0; }
 
 .title {
   font-size: 2.5em;
@@ -50,16 +53,16 @@ article section .blog-post {
 nav ul {
   list-style: none;
   margin: 0;
-  margin-right: 3em; }
+  margin-right: 1em; }
   nav ul li {
     position: relative;
-    display: block;
+    display: inline-block;
+    margin-right: 2em;
     line-height: 60px; }
 
 /* Body */
 body {
-  margin: 0;
-  min-height: 100%; }
+  margin: 0; }
   body > nav {
     position: absolute;
     top: 0;
@@ -77,18 +80,25 @@ body {
       font-size: 1.5rem;
       line-height: 60px; }
   body > article {
+    min-height: calc(100vh - 200px);
     width: 55%;
     line-height: 1.6em;
     display: block;
-    margin: 120px auto 40px; }
+    margin-top: 120px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: -80px; }
+    body > article:after {
+      content: "";
+      height: 80px;
+      display: block; }
 
 footer {
   position: relative;
   clear: both;
   line-height: 1.6em;
   display: flex;
-  margin-top: -3em;
-  height: 3em;
+  height: 80px;
   padding: 50px 80px 10px; }
   footer p {
     margin-left: auto;
@@ -136,6 +146,8 @@ a {
   a:hover {
     text-decoration: underline; }
 
+.rendered_html p:first-child {
+  margin-top: 10px; }
 .rendered_html p:last-child {
   margin-bottom: 0; }
 .rendered_html :link {
@@ -167,42 +179,6 @@ nav a:link, nav a:visited, nav a:hover {
   padding: 4px; }
 
 /* Sidebar */
-aside {
-  -ms-flex-preferred-size: 17%;
-  flex-basis: 17%;
-  max-width: 17%;
-  font-size: 14px;
-  padding: 30px;
-  background-color: #E84C3D;
-  color: white;
-  text-align: center;
-  padding-top: 8%;
-  background-size: cover; }
-  aside a h1 {
-    color: white; }
-  aside > ul {
-    list-style-type: none;
-    padding: 0px 10px;
-    margin-top: 0px; }
-  aside > h2 {
-    text-transform: uppercase;
-    font-size: 14px;
-    margin-bottom: 5px; }
-
-#avatar {
-  width: 100px;
-  border-radius: 50%;
-  display: block;
-  margin: 0 10px 20px 0;
-  box-shadow: 0px 0px 5px 3px #FF6027;
-  -webkit-transition: 200ms;
-  -moz-transition: 200ms;
-  -ms-transition: 200ms;
-  -o-transition: 200ms;
-  transition: 200ms; }
-  #avatar:hover {
-    box-shadow: 0px 0px 5px 3px white; }
-
 .social {
   display: inline-block;
   margin-top: 40px; }
@@ -238,9 +214,8 @@ aside {
 .rendered-html p {
   margin-top: 0; }
 
-h1 {
-  font-size: 2em;
-  margin-top: 20px; }
+h1 + p, h2 + p, h3 + p, h4 + p {
+  margin-top: 0.7em; }
 
 h2 code {
   font-size: 15pt !important; }
@@ -268,3 +243,7 @@ table.dataframe {
   border-collapse: collapse; }
 
 /*--------Responsive------------*/
+@media (max-width: 800px) {
+  body > article {
+    margin: 0 auto;
+    padding: 1em; } }

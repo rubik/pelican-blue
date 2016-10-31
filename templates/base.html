@@ -13,15 +13,17 @@
 
   <!-- schema.org -->
   <meta itemprop="name" content="{{ SITENAME }}">
-  <meta itemprop="image" content="{{ AVATAR}}">
+  <!--<meta itemprop="image" content="{{ AVATAR }}">-->
   <meta itemprop="description" content="{{ AUTHOR_DESCRIPTION }}">
 
   <!-- Style Meta Data -->
   <link href="https://fonts.googleapis.com/css?family=Droid+Sans+Mono|Exo+2|Lora" rel="stylesheet">
-  <link rel="stylesheet" href="{{ SITEURL }}/theme/css/flexboxgrid.min.css" type="text/css" />
   <link rel="stylesheet" href="{{ SITEURL }}/theme/css/grade3.css" type="text/css" />
   <link rel="stylesheet" href="{{ SITEURL }}/theme/css/pygments.css" type="text/css" />
   <link rel="stylesheet" href="{{ SITEURL }}/theme/css/style.css" type="text/css" />
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.2/require.min.js"></script>-->
+  <!--<script src="{{ SITEURL }}/theme/js/jupyter-vega/index.js"></script>-->
 
   <!-- Feed Meta Data -->
   {% if FEED_ALL_ATOM %}
@@ -30,11 +32,6 @@
   {% if FEED_ALL_RSS %}
     <link href="{{ SITEURL }}/{{ FEED_RSS }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} RSS Feed" />
   {% endif %}
-
-  <!-- Twitter Feed -->
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:site" content="{{ TWITTER_USERNAME }}">
-  <meta name="twitter:image" content="">
   {% endblock %}
 </head>
 
@@ -44,7 +41,8 @@
         <h2><a href="{{ SITEURL }}">Signal to Noise</a></h2>
       </header>
       <ul>
-          <li><a href="{{ SITEURL }}/pages/about-me.html">About</a></li>
+          <li><a href="{{ SITEURL }}/feeds/all.atom.xml">Feed</a></li>
+          <li><a href="{{ SITEURL }}/pages/about.html">About</a></li>
       </ul>
     </nav>
 
@@ -64,6 +62,28 @@
     </p>
   </footer>
   {% endif %}
+
+
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
+  <script type="text/javascript">
+  init_mathjax = function() {
+      if (window.MathJax) {
+          // MathJax loaded
+          MathJax.Hub.Config({
+              tex2jax: {
+                  inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                  displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+              },
+              displayAlign: 'left', // Change this to 'center' to center equations.
+              "HTML-CSS": {
+                  styles: {'.MathJax_Display': {"margin": 0}}
+              }
+          });
+          MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+      }
+  }
+  init_mathjax();
+  </script>
 
   {% if GOOGLE_ANALYTICS %}
   <!-- Analytics -->

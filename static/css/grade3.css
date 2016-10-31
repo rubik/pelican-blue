@@ -1148,7 +1148,7 @@ div.rendered_html h5 {
 .rendered_html h4:first-child,
 .rendered_html h5:first-child,
 .rendered_html h6:first-child {
- margin-top: 0.2em;
+ margin-top: 1em;
 }
 .rendered_html h1,
 .text_cell_render h1 {
@@ -1482,7 +1482,6 @@ video {
  display: inline;
  vertical-align: middle;
  align-content: center;
- margin-left: 20%;
 }
 .cmd-palette .modal-body {
  padding: 0px;
