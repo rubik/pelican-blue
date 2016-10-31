@@ -833,23 +833,6 @@ select.form-control.select-xs {
 div.output.output_scroll {
  box-shadow: none;
 }
-::-webkit-scrollbar-track {
- -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.11);
- background-color: #d0d0d0;
- border-radius: 6px;
-}
-::-webkit-scrollbar {
- width: 14px;
- height: 10px;
- background-color: #d0d0d0;
- border-radius: 6px;
-}
-::-webkit-scrollbar-thumb {
- background-color: #ffffff;
- background-image: -webkit-gradient(linear,40% 0%,75% 86%,from(#ff6b0f ),color-stop(0.5,#ff8b42 ),to(#ff6b0f ));
- min-height: 60px;
- border-radius: 2px;
-}
 div.input_area {
  background-color: #efefef;
  padding-right: 1.2em;
