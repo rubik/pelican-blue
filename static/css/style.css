@@ -287,7 +287,7 @@ table.dataframe {
 /*--------Responsive------------*/
 @media (max-width: 800px) {
   body > article {
-    max-width: 85%;
+    width: 80%;
     margin: 80px auto;
     padding: 40px; } }
 @media (max-width: 450px) {
