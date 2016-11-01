@@ -408,3 +408,8 @@ table.dataframe {
     //margin: 10px auto;
   //}
 }
+@media (max-width: 450px) {
+  nav > h2 {
+    font-size: 1.2rem;
+  }
+}
