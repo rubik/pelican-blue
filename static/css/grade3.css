@@ -1860,19 +1860,3 @@ div#maintoolbar {
 .MathJax:focus, body :focus .MathJax {
     display: inline-block !important;
 }
-
-<script>
-    MathJax.Hub.Config({
-        "HTML-CSS": {
-            preferredFont: "TeX",
-            availableFonts: ["STIX","TeX"],
-            styles: {
-                scale: 110,
-                ".MathJax_Display": {
-                    "font-size": "110%",
-                }
-            }
-        }
-    });
-</script>
-
