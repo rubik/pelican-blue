@@ -33,13 +33,9 @@
   {% endassets %}
 
   <!-- Feed Meta Data -->
-  <!--{% if FEED_ALL_ATOM %}-->
-    <!--<link href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} ATOM Feed" />-->
-  <!--{% endif %}-->
-  <!--{% if FEED_ALL_RSS %}-->
-    <!--<link href="{{ SITEURL }}/{{ FEED_RSS }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} RSS Feed" />-->
-  <!--{% endif %}-->
-  <a href="http://feeds.feedburner.com/signal-to-noise" title="FeedBurner link" target="_blank">Feed</a>
+  {% if FEED_ALL_RSS %}
+    <link href="{{ SITEURL }}/{{ FEED_RSS }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} RSS Feed" />
+  {% endif %}
   {% endblock %}
 
   <!-- MathJax -->
@@ -64,7 +60,9 @@
         <h2><a href="{{ SITEURL }}">Signal to Noise</a></h2>
       </header>
       <ul>
-          <li><a href="{{ SITEURL }}/feeds/all.rss.xml">Feed</a></li>
+          {% if FEEDBURNER_URL %}
+          <li><a href="{{ FEEDBURNER_URL }}" title="FeedBurner link" target="_blank">Feed</a></li>
+          {% endif %}
           <li><a href="{{ SITEURL }}/pages/about.html">About</a></li>
       </ul>
     </nav>
