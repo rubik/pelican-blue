@@ -129,12 +129,6 @@ body {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: -$footer-height;
-
-    &:after {
-      content: "";
-      height: $footer-height;
-      display: block;
-    }
   }
 }
 
