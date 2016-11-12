@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ DEFAULT_LANG }}" itemscope itemtype="http://schema.org/Person">
+<html lang="{{ DEFAULT_LANG }}" itemscope itemtype="http://schema.org/Blog">
 <head>
   {% block head %}
   <meta charset="utf-8">
@@ -23,7 +23,8 @@
 
   <!-- schema.org -->
   <meta itemprop="name" content="{{ SITENAME }}">
-  <!--<meta itemprop="image" content="{{ AVATAR }}">-->
+  <meta itemprop="author" itemtype="http://schema.org/Person" content="{{ AUTHOR }}">
+  <meta itemprop="thumbnailUrl" content="{{ SITEURL }}/images/avatar.png">
   <meta itemprop="description" content="{{ AUTHOR_DESCRIPTION }}">
 
   <!-- Styles -->

@@ -13,15 +13,21 @@
 {% endblock head %}
 {% block title %}{{ article.title }}{% endblock %}
 {% block content %}
-<section id="content">
+<section id="content" itemscope itemtype="http://schema.org/BlogPosting">
+    <meta itemprop="image" content="{{ SITEURL }}/images/avatar.png">
+    <meta itemprop="author" content="{{ AUTHOR }}">
+    <meta itemprop="publisher" content="{{ AUTHOR }}">
+    <meta itemprop="mainEntityOfPage" content="{{ SITEURL }}/{{ article.url }}">
     <article>
-        <h2 class="post_title post_detail"><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title }}">{{ article.title }}</a></h2>
+        <h2 class="post_title post_detail" itemprop="headline">
+            <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title }}">{{ article.title }}</a>
+        </h2>
         <div class="post_list">
             <span>By </span>
             <a href="{{ SITEURL }}/{{ article.author.url }}">@{{ article.author }}</a>
             <span> in </span>
             <span class="post_category"><a href="{{ SITEURL }}/{{ article.category.url }}" rel="bookmark" title="Permalink to {{ article.category|striptags }}">[ {{ article.category }} ]</a></span>
-            <span class="post_date">{{ article.locale_date }}</span>
+            <time datetime="{{ article.locale_date }}" itemprop="datePublished" class="post_date">{{ article.locale_date }}</span>
             <div><span>Tags : </span>
                 {% if article.tags %}
                 {% for tag in article.tags %}
@@ -30,7 +36,7 @@
                 {% endif %}
             </div>
         </div>
-        <div class="entry-content blog-post">
+        <div class="entry-content blog-post" itemprop="articleBody">
             {{ article.content }}
         </div>
         <div class="post_list">
